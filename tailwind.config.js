@@ -10,7 +10,7 @@ module.exports = {
         lineHeight: "18px",
         fontWeight: "400",
       }],
-      base: ["1rem", {
+      body: ["1rem", {
         lineHeight: "18px",
         fontWeight: "400",
       }],
