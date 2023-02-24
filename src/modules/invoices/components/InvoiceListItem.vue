@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-dark-blue-gray mb-4 py-4 px-6 rounded-lg flex items-center">
+  <div class="bg-dark-blue-gray mb-4 py-4 px-6 rounded-lg flex items-center border-[1px] border-transparent cursor-pointer hover:border-dark-violet transition-all">
     <div class="w-[100px]">
       <BaseTypography is-bold>
         <span class="text-dark-blue">#</span>{{ props.invoice.invoice_number }}
