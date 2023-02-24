@@ -1,5 +1,8 @@
 <template>
-  <div class="bg-dark-blue-gray mb-4 py-4 px-6 rounded-lg flex items-center border-[1px] border-transparent cursor-pointer hover:border-dark-violet transition-all">
+  <div 
+    @click="handleNavigation"
+    class="bg-dark-blue-gray mb-4 py-4 px-6 rounded-lg flex items-center border-[1px] border-transparent cursor-pointer hover:border-dark-violet transition-all"
+  >
     <div class="w-[100px]">
       <BaseTypography is-bold>
         <span class="text-dark-blue">#</span>{{ props.invoice.invoice_number }}
@@ -36,6 +39,9 @@ import { Invoice } from '../types';
 import ArrowLeftIcon from '@/common/components/icons/ArrowLeftIcon.vue';
 import InvoiceStatus from './InvoiceStatus.vue';
 import { truncateString } from '../../../common/helpers';
+import { useRouter } from 'vue-router';
+
+const router = useRouter();
 
 const props = defineProps({
   invoice: {
@@ -47,4 +53,8 @@ const props = defineProps({
 const billToNameTruncated = computed(() => {
   return truncateString(props.invoice.bill_to.name, 15);
 });
+
+const handleNavigation = () => {
+  router.push({ name: "invoice-details", params: { id: props.invoice.id }});
+};
 </script>
