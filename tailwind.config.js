@@ -8,11 +8,11 @@ module.exports = {
     fontSize: {
       sm: ["0.8125rem", {
         lineHeight: "18px",
-        fontWeight: "400",
+        fontWeight: "300",
       }],
       body: ["1rem", {
         lineHeight: "18px",
-        fontWeight: "400",
+        fontWeight: "300",
       }],
       md: ["1.5rem", {
         lineHeight: "22px",
@@ -26,8 +26,8 @@ module.exports = {
     colors: {
       "dark-violet": "#7C5DFA",
       "light-violet": "#9277FF",
-      "dark-blue-grey": "#1E2139",
-      "light-blue-grey": "#252945",
+      "dark-blue-gray": "#1E2139",
+      "light-blue-gray": "#252945",
       "dark-blue": "#7E88C3",
       "light-blue": "#DFE3FA",
       "gray": "#888EB0",
