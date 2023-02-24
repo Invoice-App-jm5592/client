@@ -8,7 +8,7 @@ import BaseTypography from '@/common/components/BaseTypography.vue';
         Invoices
       </BaseTypography>
       <BaseTypography>
-        There are {{ store.getters.invoicesListCount }} total invoices
+        There are {{ store.getters.totalInvoices }} total invoices
       </BaseTypography>
     </div>
     <div class="flex items-center">
