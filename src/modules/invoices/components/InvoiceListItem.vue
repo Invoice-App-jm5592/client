@@ -40,6 +40,7 @@ import ArrowLeftIcon from '@/common/components/icons/ArrowLeftIcon.vue';
 import InvoiceStatus from './InvoiceStatus.vue';
 import { truncateString } from '../../../common/helpers';
 import { useRouter } from 'vue-router';
+import constants from '@/common/constants';
 
 const router = useRouter();
 
@@ -55,6 +56,6 @@ const billToNameTruncated = computed(() => {
 });
 
 const handleNavigation = () => {
-  router.push({ name: "invoice-details", params: { id: props.invoice.id }});
+  router.push({ name: constants.routes.invoiceDetails.name, params: { id: props.invoice.id }});
 };
 </script>
