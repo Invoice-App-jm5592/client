@@ -1,37 +1,50 @@
 <template>
-  <div class="bg-dark-blue-gray mb-4 py-4 px-6 rounded-lg flex justify-between items-center">
-    <BaseTypography is-bold>
-      <span class="text-dark-blue">#</span>{{ props.invoice.invoice_number }}
-    </BaseTypography>
-    <BaseTypography>
-      {{ props.invoice.issue_date }}
-    </BaseTypography>
-    <BaseTypography>
-      {{ props.invoice.bill_to.name }}
-    </BaseTypography>
-    <div class="flex items-center justify-end">
+  <div class="bg-dark-blue-gray mb-4 py-4 px-6 rounded-lg flex items-center">
+    <div class="w-[100px]">
+      <BaseTypography is-bold>
+        <span class="text-dark-blue">#</span>{{ props.invoice.invoice_number }}
+      </BaseTypography>
+    </div>
+    <div class="w-[100px] mr-4">
+      <BaseTypography>
+        {{ props.invoice.issue_date }}
+      </BaseTypography>
+    </div>
+    <div class="w-[150px]">
+      <BaseTypography>
+        {{ billToNameTruncated }}
+      </BaseTypography>
+    </div>
+    <div class="w-[100px] text-end mr-8">
       <BaseTypography is-bold>
         {{ props.invoice.total }} €
       </BaseTypography>
     </div>
-    <InvoiceStatus :status="props.invoice.status" />
-    <div class="flex align-center justify-end">
+    <div class="mr-auto">
+      <InvoiceStatus :status="props.invoice.status" />
+    </div>
+    <div class="flex items-center justify-end">
       <ArrowLeftIcon />
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-import { defineProps, PropType } from 'vue';
+import { defineProps, PropType, computed } from 'vue';
 import BaseTypography from '@/common/components/BaseTypography.vue';
 import { Invoice } from '../types';
 import ArrowLeftIcon from '@/common/components/icons/ArrowLeftIcon.vue';
 import InvoiceStatus from './InvoiceStatus.vue';
+import { truncateString } from '../../../common/helpers';
 
 const props = defineProps({
   invoice: {
     type: Object as PropType<Invoice>,
     required: true
   }
+});
+
+const billToNameTruncated = computed(() => {
+  return truncateString(props.invoice.bill_to.name, 15);
 });
 </script>

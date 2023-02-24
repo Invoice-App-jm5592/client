@@ -32,14 +32,8 @@ const invoices: Invoice[] = [
         price: 156,
         total: 156
       },
-      {
-        name: "App Screen Design",
-        quantity: 9,
-        price: 840,
-        total: 7560,
-      }
     ],
-    total: 7760 
+    total: 112312312
   },
   {
     id: "2",
@@ -62,7 +56,7 @@ const invoices: Invoice[] = [
       code: "BD1 9PB",
       country: "United Kingdom"
     },
-    "issue_date": "21 Aug 2021",
+    "issue_date": "02 Dec 2022",
     "payment_terms": "Next 30 Days",
     description: "Graphic Design for Mobile App",
     items: [
@@ -95,7 +89,7 @@ const invoices: Invoice[] = [
       country: "United Kingdom"
     },
     "bill_to": {
-      name: "Jonny Clayton",
+      name: "Dr. M",
       email: "jonny@example.com",
       address: "84 Church Way",
       city: "London",
