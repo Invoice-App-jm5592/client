@@ -8,7 +8,7 @@ import BaseTypography from '@/common/components/BaseTypography.vue';
         Invoices
       </BaseTypography>
       <BaseTypography>
-        There are 3 total invoices
+        There are {{ store.getters.invoicesListCount }} total invoices
       </BaseTypography>
     </div>
     <div class="flex items-center">
@@ -26,8 +26,11 @@ import BaseTypography from '@/common/components/BaseTypography.vue';
 </template>
 
 <script setup lang="ts">
+import { useStore } from 'vuex';
 import BaseButton from '@/common/components/BaseButton.vue';
 import BaseTypography from '@/common/components/BaseTypography.vue';
 import PlusIcon from '@/common/components/icons/PlusIcon.vue';
 import InvoiceFilter from './InvoiceFilter.vue';
+
+const store = useStore();
 </script>

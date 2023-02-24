@@ -7,4 +7,7 @@ export default {
   invoicesList: (state: InvoicesState) => {
     return state.list;
   },
+  invoicesListCount: (state: InvoicesState) => {
+    return state.list.length;
+  }
 };
