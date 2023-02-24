@@ -1,11 +1,9 @@
 <template>
   <div class="flex mb-4 last:mb-0">
-    <div
-      @click="store.commit('toggleStatusFilter', props.label)"
+    <div @click="selectFilter"
       class="mr-4 cursor-pointer rounded-sm w-4 h-4 border-transparent border-[1px] hover:border-dark-violet transition-all flex items-center justify-center"
-      :class="conditionalClasses"
-    >
-      <CheckIcon v-if="isSelected" /> 
+      :class="conditionalClasses">
+      <CheckIcon v-if="isSelected" />
     </div>
     <BaseTypography is-bold>
       {{ props.label }}
@@ -40,4 +38,8 @@ const conditionalClasses = computed(() => {
     "bg-dark-violet": isSelected.value
   }
 });
+
+const selectFilter = () => {
+  store.commit('toggleStatusFilter', props.label);
+};
 </script>
