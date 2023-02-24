@@ -1,9 +1,7 @@
 <template>
   <BasePage>
     <template #header>
-      <BaseTypography size="lg">
-        This is the header
-      </BaseTypography>
+      <InvoiceListHeader />
     </template>
     <template #content>
       <InvoiceList :list="invoices" />
@@ -13,7 +11,7 @@
 
 <script setup lang="ts">
 import BasePage from '@/common/components/BasePage.vue';
-import BaseTypography from '@/common/components/BaseTypography.vue';
 import InvoiceList from '@/modules/invoices/components/InvoiceList.vue';
+import InvoiceListHeader from '@/modules/invoices/components/InvoiceListHeader.vue';
 import invoices from '../../modules/invoices/fixtures';
 </script>

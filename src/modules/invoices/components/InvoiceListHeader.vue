@@ -12,9 +12,7 @@ import BaseTypography from '@/common/components/BaseTypography.vue';
       </BaseTypography>
     </div>
     <div class="flex items-center">
-      <BaseTypography is-bold>
-        Filter by status
-      </BaseTypography>
+      <InvoiceFilter />
       <BaseButton label="New Invoice">
         <template #icon>
           <PlusIcon />
@@ -31,4 +29,5 @@ import BaseTypography from '@/common/components/BaseTypography.vue';
 import BaseButton from '@/common/components/BaseButton.vue';
 import BaseTypography from '@/common/components/BaseTypography.vue';
 import PlusIcon from '@/common/components/icons/PlusIcon.vue';
+import InvoiceFilter from './InvoiceFilter.vue';
 </script>
