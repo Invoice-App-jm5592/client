@@ -4,15 +4,14 @@
     :class="conditionalContainerStyles"
   >
     <div class="w-2 h-2 rounded-full mr-2 -translate-y-px" :class="conditionalContainerStyles" />
-    <BaseTypography is-bold :styles="conditionalTextStyles">
+    <p :class="conditionalTextStyles" class="text-body font-bold">
       {{ props.status }}
-    </BaseTypography>
+    </p>
   </div>
 </template>
 
 <script lang="ts" setup>
 import { defineProps, PropType, computed } from 'vue';
-import BaseTypography from '@/common/components/BaseTypography.vue';
 import { InvoiceStatus } from '../types';
 
 const props = defineProps({
