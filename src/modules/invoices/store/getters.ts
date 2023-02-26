@@ -7,7 +7,10 @@ export default {
   invoicesList: (state: InvoicesState) => {
     return state.list;
   },
+  isInvoicesListEmpty: (state: InvoicesState) => {
+    return state.list.length === 0;
+  },
   totalInvoices: (state: InvoicesState) => {
     return state.list.length;
-  }
+  },
 };
