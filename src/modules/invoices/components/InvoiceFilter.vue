@@ -8,11 +8,13 @@
           <ArrowDownIcon v-else />
         </BaseTypography>
       </div>
-      <div v-if="isDropdownOpen" class="absolute bg-dark-blue-gray rounded-lg mt-4 p-6 shadow-2xl w-[150px]">
-        <BaseCheckbox label="Draft" />
-        <BaseCheckbox label="Pending" />
-        <BaseCheckbox label="Paid" />
-      </div>
+      <FadeTransition>
+        <div v-if="isDropdownOpen" class="absolute bg-dark-blue-gray rounded-lg mt-4 p-6 shadow-2xl w-[150px]">
+          <BaseCheckbox label="Draft" />
+          <BaseCheckbox label="Pending" />
+          <BaseCheckbox label="Paid" />
+        </div>
+      </FadeTransition>
     </div>
   </div>
 </template>
@@ -22,6 +24,7 @@ import { ref } from 'vue';
 import BaseCheckbox from '@/common/components/BaseCheckbox.vue';
 import BaseTypography from '@/common/components/BaseTypography.vue';
 import ArrowDownIcon from '@/common/components/icons/ArrowDownIcon.vue';
+import FadeTransition from '@/common/components/transitions/FadeTransition.vue';
 
 const isDropdownOpen = ref(false);
 
