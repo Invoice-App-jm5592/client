@@ -10,7 +10,7 @@
     </div>
     <div class="flex items-center">
       <InvoiceFilter />
-      <BaseButton label="New Invoice" @click="toggleDrawer">
+      <BaseButton @click="toggleDrawer">
         <template #icon>
           <PlusIcon />
         </template>
@@ -21,7 +21,29 @@
     </div>
   </div>
   <TheLeftDrawer :is-visible="isDrawerOpen" @click-away="toggleDrawer">
-    <BaseTypography>This is the left drawer</BaseTypography>
+    <template #header>
+      <BaseTypography size="md">New Invoice</BaseTypography>
+    </template>
+    <template #content>
+      <!-- TODO: Implement InvoiceForm with type "add"-->
+    </template>
+    <template #footer>
+      <div class="flex justify-between">
+        <div class="flex ml-auto">
+          <BaseButton class="mr-4 bg-light-blue-gray hover:bg-gray transition-all" @click="toggleDrawer">
+            <template #label>
+              Cancel
+            </template>
+          </BaseButton>
+          <!-- TODO: Implement click handler to save invoice -->
+          <BaseButton @click="() => {}">
+            <template #label>
+              Save Invoice
+            </template>
+          </BaseButton>
+        </div>
+      </div>
+    </template>
   </TheLeftDrawer>
 </template>
 
