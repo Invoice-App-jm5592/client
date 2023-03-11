@@ -24,7 +24,7 @@ import BaseError from '@/common/components/BaseError.vue';
 import BaseLoadingSpinner from '@/common/components/BaseLoadingSpinner.vue';
 
 const store = useStore();
-const isLoading = ref(true);
+const isLoading = ref(false);
 const error = ref('');
 
 onMounted(async () => {
@@ -35,7 +35,9 @@ onMounted(async () => {
   } catch (_err) {
     error.value = 'Something went wrong fetching your invoices. Please try again.'
   } finally {
-    isLoading.value = true;
+    setTimeout(() => {
+      isLoading.value = false;
+    }, 500);
   }
 });
 </script>
