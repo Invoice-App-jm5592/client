@@ -58,6 +58,4 @@ const billToNameTruncated = computed(() => {
 const handleNavigation = () => {
   router.push({ name: constants.routes.invoiceDetails.name, params: { id: props.invoice.id }});
 };
-
-console.log(props.invoice);
 </script>
