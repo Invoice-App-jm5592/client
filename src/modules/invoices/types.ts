@@ -1,4 +1,4 @@
-export type InvoiceStatus = "Draft" | "Pending" | "Paid";
+export type InvoiceStatus = "DRAFT" | "PENDING" | "PAID";
 
 export type Invoice = {
   id: string;

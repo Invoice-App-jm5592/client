@@ -1,4 +1,4 @@
-import { InvoiceStatus } from '../types';
+import { InvoiceStatus, Invoice } from '../types';
 import { InvoicesState } from './state';
 
 export default {
@@ -8,5 +8,8 @@ export default {
       return;
     }
     state.activeStatusFilters = state.activeStatusFilters.concat(newStatus);
+  },
+  addInvoicesToList: (state: InvoicesState, newList: Invoice[]) => {
+    state.list = newList;
   }
 };

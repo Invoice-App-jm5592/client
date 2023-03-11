@@ -4,7 +4,7 @@ const invoices: Invoice[] = [
   {
     id: "1",
     "invoice_number": "AK10023",
-    status: "Pending",
+    status: "PENDING",
     "bill_from": {
       name: "Jean-Marc Möckel",
       email: "jonny@gmail.com",
@@ -38,7 +38,7 @@ const invoices: Invoice[] = [
   {
     id: "2",
     "invoice_number": "AK10067",
-    status: "Paid",
+    status: "PAID",
     "bill_from": {
       name: "Jean-Marc Möckel",
       email: "jonny@gmail.com",
@@ -78,7 +78,7 @@ const invoices: Invoice[] = [
   {
     id: "3",
     "invoice_number": "AK10055",
-    status: "Draft",
+    status: "DRAFT",
     "bill_from": {
       name: "Jean-Marc Möckel",
       email: "jonny@gmail.com",

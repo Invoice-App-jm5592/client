@@ -5,7 +5,7 @@
   >
     <div class="w-2 h-2 rounded-full mr-2 -translate-y-px" :class="conditionalContainerStyles" />
     <p :class="conditionalTextStyles" class="text-body font-bold">
-      {{ props.status }}
+      {{ statusLabel }}
     </p>
   </div>
 </template>
@@ -13,6 +13,7 @@
 <script lang="ts" setup>
 import { defineProps, PropType, computed } from 'vue';
 import { InvoiceStatus } from '../types';
+import { transformStringToTitleCase } from '../../../common/helpers';
 
 const props = defineProps({
   status: {
@@ -23,22 +24,26 @@ const props = defineProps({
 
 const conditionalContainerStyles = computed(() => {
   return {
-    "bg-orange": props.status === "Pending",
-    "bg-green": props.status === "Paid",
-    "bg-white": props.status === "Draft",
+    "bg-orange": props.status === "PENDING",
+    "bg-green": props.status === "PAID",
+    "bg-white": props.status === "DRAFT",
   }
 });
 
 const conditionalTextStyles = computed(() => {
   switch (props.status) {
-    case "Draft":
+    case "DRAFT":
       return "text-white";
-    case "Pending":
+    case "PENDING":
       return "text-orange";
-    case "Paid":
+    case "PAID":
       return "text-green";
     default: 
       return "";
   }
+});
+
+const statusLabel = computed(() => {
+  return transformStringToTitleCase(props.status);
 });
 </script>

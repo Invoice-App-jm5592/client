@@ -52,10 +52,12 @@ const props = defineProps({
 });
 
 const billToNameTruncated = computed(() => {
-  return truncateString(props.invoice.bill_to.name, 15);
+  return truncateString(props.invoice.bill_to.name, 17);
 });
 
 const handleNavigation = () => {
   router.push({ name: constants.routes.invoiceDetails.name, params: { id: props.invoice.id }});
 };
+
+console.log(props.invoice);
 </script>

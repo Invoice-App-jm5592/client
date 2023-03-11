@@ -1,18 +1,17 @@
 <template>
   <div>
-    <InvoiceListItem v-for="invoice in props.list" :key="invoice.id" :invoice="invoice" />
+    <InvoiceListItem v-for="invoice in invoicesList" :key="invoice.id" :invoice="invoice" />
   </div>
 </template>
 
 <script setup lang="ts">
-import { defineProps, PropType } from 'vue';
-import { Invoice } from '../types';
+import { computed } from 'vue';
+import { useStore } from 'vuex';
 import InvoiceListItem from './InvoiceListItem.vue';
 
-const props = defineProps({
-  list: {
-    type: Array as PropType<Invoice[]>,
-    required: true,
-  }
-})
+const store = useStore();
+
+const invoicesList = computed(() => {
+  return store.getters.invoicesList;
+});
 </script>
