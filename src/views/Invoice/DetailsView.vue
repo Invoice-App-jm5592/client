@@ -8,7 +8,9 @@
         </BaseTypography>
       </div>
     </template>
-    <template #content>CONTENT</template>
+    <template #content>
+      <InvoiceActions status="PENDING" />
+    </template>
   </BasePage>
 </template>
 
@@ -17,10 +19,11 @@ import { useRouter } from 'vue-router';
 import BasePage from '@/common/components/BasePage.vue';
 import BaseTypography from '@/common/components/BaseTypography.vue';
 import ArrowLeftIcon from '@/common/components/icons/ArrowLeftIcon.vue';
+import InvoiceActions from '@/modules/invoices/components/InvoiceActions.vue';
 
 const router = useRouter();
 
-const goBack = () =>{
+const goBack = () => {
   router.go(-1);
 };
 </script>
