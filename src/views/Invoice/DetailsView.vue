@@ -10,6 +10,7 @@
     </template>
     <template #content>
       <InvoiceActions />
+      <InvoiceDetails />
     </template>
   </BasePage>
 </template>
@@ -23,6 +24,7 @@ import BaseTypography from '@/common/components/BaseTypography.vue';
 import ArrowLeftIcon from '@/common/components/icons/ArrowLeftIcon.vue';
 import InvoiceActions from '@/modules/invoices/components/InvoiceActions.vue';
 import axiosInstance from '@/common/config/axios';
+import InvoiceDetails from '@/modules/invoices/components/InvoiceDetails.vue';
 
 const store = useStore();
 const router = useRouter();

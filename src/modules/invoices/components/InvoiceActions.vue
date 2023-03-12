@@ -1,5 +1,5 @@
 <template>
-  <div class="py-6 px-8 bg-dark-blue-gray rounded-lg flex justify-between align-center">
+  <div class="py-6 px-8 mb-6 bg-dark-blue-gray rounded-lg flex justify-between align-center">
     <div class="flex items-center">
       <BaseTypography styles="mr-5">Status</BaseTypography>
       <InvoiceStatus :status="currentStatus" />
