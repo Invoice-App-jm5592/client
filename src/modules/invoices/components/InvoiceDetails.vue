@@ -68,7 +68,7 @@
       </div>
     </div>
 
-    <div class="p-8 bg-black rounded-lg flex justify-between align-baseline">
+    <div class="p-8 bg-black rounded-lg flex justify-between items-center">
       <BaseTypography size="md" styles="font-normal">Amount</BaseTypography>
       <BaseTypography size="lg" styles="font-bold">{{ invoice?.total }} €</BaseTypography>
     </div>
