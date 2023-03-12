@@ -10,9 +10,7 @@
       </div>
       <FadeTransition>
         <div v-if="isDropdownOpen" class="absolute bg-dark-blue-gray rounded-lg mt-4 p-6 shadow-2xl w-[150px]">
-          <BaseCheckbox label="Draft" />
-          <BaseCheckbox label="Pending" />
-          <BaseCheckbox label="Paid" />
+          <BaseCheckbox v-for="status in INVOICE_STATUS_LIST" :key="status" :label="status" />
         </div>
       </FadeTransition>
     </div>
@@ -25,8 +23,11 @@ import BaseCheckbox from '@/common/components/BaseCheckbox.vue';
 import BaseTypography from '@/common/components/BaseTypography.vue';
 import ArrowDownIcon from '@/common/components/icons/ArrowDownIcon.vue';
 import FadeTransition from '@/common/components/transitions/FadeTransition.vue';
+import { InvoiceStatus } from '../types';
 
 const isDropdownOpen = ref(false);
+
+const INVOICE_STATUS_LIST: InvoiceStatus[] = ['DRAFT', 'PAID', 'PENDING'];
 
 const toggleDropdown = () => {
   isDropdownOpen.value = !isDropdownOpen.value;

@@ -6,7 +6,7 @@
       <CheckIcon v-if="isSelected" />
     </div>
     <BaseTypography is-bold>
-      {{ props.label }}
+      {{ checkboxLabel }}
     </BaseTypography>
   </div>
 </template>
@@ -17,6 +17,7 @@ import { useStore } from 'vuex';
 import { InvoiceStatus } from '@/modules/invoices/types';
 import BaseTypography from './BaseTypography.vue';
 import CheckIcon from '../components/icons/CheckIcon.vue';
+import { transformStringToTitleCase } from '../helpers';
 
 
 const store = useStore();
@@ -38,6 +39,8 @@ const conditionalClasses = computed(() => {
     "bg-dark-violet": isSelected.value
   }
 });
+
+const checkboxLabel = transformStringToTitleCase(props.label);
 
 const selectFilter = () => {
   store.commit('toggleStatusFilter', props.label);
