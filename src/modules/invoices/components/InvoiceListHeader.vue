@@ -10,7 +10,7 @@
     </div>
     <div class="flex items-center">
       <InvoiceFilter />
-      <BaseButton @click="toggleDrawer">
+      <BaseButton classes="bg-dark-violet hover:bg-light-violet" @click="toggleDrawer">
         <template #icon>
           <PlusIcon />
         </template>

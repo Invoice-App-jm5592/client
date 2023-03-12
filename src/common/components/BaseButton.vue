@@ -1,8 +1,8 @@
 <template>
   <button 
     @click="props.onClick"
-    class="rounded-3xl bg-dark-violet hover:bg-light-violet transition-all flex items-center"
     :class="classes"
+    class="rounded-3xl transition-all flex items-center"
   > 
     <span v-if="$slots.icon" class="my-2 ml-2 rounded-full bg-white w-8 h-8 flex items-center justify-center">
       <slot name="icon" />
