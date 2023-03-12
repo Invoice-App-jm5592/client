@@ -36,7 +36,7 @@
 import { defineProps, PropType, computed } from 'vue';
 import BaseTypography from '@/common/components/BaseTypography.vue';
 import { Invoice } from '../types';
-import ArrowLeftIcon from '@/common/components/icons/ArrowLeftIcon.vue';
+import ArrowLeftIcon from '@/common/components/icons/ArrowRightIcon.vue';
 import InvoiceStatus from './InvoiceStatus.vue';
 import { truncateString } from '../../../common/helpers';
 import { useRouter } from 'vue-router';
