@@ -9,19 +9,34 @@
       </div>
     </template>
     <template #content>
-      <InvoiceActions status="PENDING" />
+      <InvoiceActions />
     </template>
   </BasePage>
 </template>
 
 <script setup lang="ts">
-import { useRouter } from 'vue-router';
+import { useStore } from 'vuex';
+import { onMounted } from 'vue';
+import { useRouter, useRoute } from 'vue-router';
 import BasePage from '@/common/components/BasePage.vue';
 import BaseTypography from '@/common/components/BaseTypography.vue';
 import ArrowLeftIcon from '@/common/components/icons/ArrowLeftIcon.vue';
 import InvoiceActions from '@/modules/invoices/components/InvoiceActions.vue';
+import axiosInstance from '@/common/config/axios';
 
+const store = useStore();
 const router = useRouter();
+const route = useRoute();
+
+onMounted(async () => {
+  const { id = '' } = route.params;
+  try {
+    const response = await axiosInstance.get(`/api/invoices/${id}`);
+    store.commit('selectInvoice', response.data.invoice);
+  } catch (error) {
+    console.error(error);
+  }
+});
 
 const goBack = () => {
   router.go(-1);

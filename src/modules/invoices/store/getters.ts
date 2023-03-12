@@ -13,4 +13,7 @@ export default {
   totalInvoices: (state: InvoicesState) => {
     return state.list.length;
   },
+  selectedInvoice: (state: InvoicesState) => {
+    return state.selectedInvoice;
+  }
 };

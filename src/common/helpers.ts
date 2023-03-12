@@ -1,4 +1,3 @@
-import { InvoiceStatus } from '../modules/invoices/types';
 export const truncateString = (str: string, maxLength: number): string => {
   if (str.length <= maxLength) {
     return str;
@@ -7,7 +6,7 @@ export const truncateString = (str: string, maxLength: number): string => {
   return str.slice(0, maxLength) + '...';
 }
 
-export const transformStringToTitleCase = (str: InvoiceStatus|undefined) => {
+export const transformStringToTitleCase = (str: string|null) => {
   if (!str) {
     return;
   }

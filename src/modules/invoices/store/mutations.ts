@@ -11,5 +11,8 @@ export default {
   },
   addInvoicesToList: (state: InvoicesState, newList: Invoice[]) => {
     state.list = newList;
+  },
+  selectInvoice: (state: InvoicesState, newInvoice: Invoice) => {
+    state.selectedInvoice = newInvoice;
   }
 };

@@ -1,5 +1,6 @@
 <template>
-  <div 
+  <div
+    v-if="statusLabel" 
     class="w-[110px] h-[40px] flex justify-center items-center bg-opacity-10 p-4 rounded-md"
     :class="conditionalContainerStyles"
   >
@@ -44,6 +45,6 @@ const conditionalTextStyles = computed(() => {
 });
 
 const statusLabel = computed(() => {
-  return transformStringToTitleCase(props.status);
+  return transformStringToTitleCase(props?.status as string);
 });
 </script>

@@ -7,12 +7,14 @@ import invoices from "../fixtures";
 export type InvoicesState = {
   activeStatusFilters: InvoiceStatus[];
   list: Invoice[];
+  selectedInvoice: Invoice | null;
 };
 
 export const invoicesState = {
   state: (): InvoicesState => ({
     activeStatusFilters: [],
-    list: []
+    list: [],
+    selectedInvoice: null
   }),
   mutations: { ...mutations },
   actions: { ...actions },
